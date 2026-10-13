@@ -1,62 +1,49 @@
-# Two new TESS planet-candidate signals: "Niyati" and "Avijit"
+# A 1,098-star TESS search at 60–100 pc: three strong signals, all retracted as likely neighbour eclipsing binaries
 
-A blind search of five years of NASA TESS full-frame-image data on **1,098 Sun-like and smaller stars, 60–100 parsecs away (196–326 light-years), that TESS never observed at 2-minute cadence**. It found two strong transit-like signals that are not on any NASA candidate or planet list (checked 2026-10-09).
+> **Correction (2026-10-13).** The two signals preregistered on 2026-10-09 as candidates **"Niyati"** (HD 354088 / TIC 345494583) and **"Avijit"** (TYC 717-2552-1 / TIC 156733696) are **retracted as planet candidates on those stars**. Pixel-level difference imaging places the missing light on faint neighbouring stars, 33″ and 47″ from the targets. Likely cause: blended eclipsing binaries. A third strong signal (TIC 180791301) fails the same way. **This search produced no surviving planet candidates.** The original Zenodo records are kept as the dated record, with a new version noting the retraction: [Niyati](https://doi.org/10.5281/zenodo.23271252), [Avijit](https://doi.org/10.5281/zenodo.23271302).
 
-> **Status: unvetted candidate signals.** They passed every automatic red-flag test and beat a survey-wide false-alarm baseline. Detailed vetting is in progress (transit fit, hold-out seasons, second data reduction, pixel-level centroids). TESS's 21-arcsecond pixels cannot rule out a faint neighbouring eclipsing binary; only follow-up with other telescopes can turn these into planets.
+We searched five years of NASA TESS full-frame-image data on **1,098 Sun-like and smaller stars at 60–100 parsecs (196–326 light-years)**. None of them were observed at 2-minute cadence, and known planet hosts, TOIs and CTOIs were excluded (lists checked 2026-10-09). Three signals stood far above the survey's false-alarm baseline. All three then failed vetting.
 
-| | **"Niyati"** (Sanskrit: destiny) | **"Avijit"** (Sanskrit: unconquered) |
-|---|---|---|
-| Star | HD 354088 = HIP 97983 = TIC 345494583 | TYC 717-2552-1 = TIC 156733696 |
-| Constellation, distance | Sagitta, 260 ly (79.7 pc) | Orion, 239 ly (73.4 pc) |
-| Star type, TESS mag | G0 dwarf, ~6000 K; 7.9 | Sun-like dwarf, ~5700 K; 8.7 |
-| Orbital period | 2.901440 ± 0.000035 d (fit) | 1.817187 d (search; fit pending) |
-| Transit depth / duration | 115 ± 13 ppm / 3.6 h (fit) | ~466 ppm / ~3.3 h (search) |
-| Size | 1.61 ± 0.17 Earth radii (fit) | ~2.3 Earth radii (search) |
-| Transits in data | 31, across 5.1 years | 38, across 6.1 years |
-| Detection strength (BLS SDE) / empirical SNR | 15.9 / 11.9 | 15.4 / 10.2 |
-| **Preregistered predictions** | [doi:10.5281/zenodo.23271252](https://doi.org/10.5281/zenodo.23271252) | [doi:10.5281/zenodo.23271302](https://doi.org/10.5281/zenodo.23271302) |
+## Gate log
+Steps follow [`CHECKLIST.md`](CHECKLIST.md). Fit, hold-out, pixel and second-reduction plots are in `results/phase3/plots/`.
 
-Nicknames are informal, not IAU names.
+| Step | "Niyati" TIC 345494583 | "Avijit" TIC 156733696 | TIC 180791301 |
+|---|---|---|---|
+| Star | HD 354088, G0, T = 7.9, 79.7 pc | TYC 717-2552-1, ~5700 K, T = 8.7, 73.4 pc | TYC 7148-1002-1, ~4900 K, T = 9.9, 70.5 pc |
+| Signal | P = 2.90144 d, 115 ppm, 3.6 h | P = 1.81719 d, 494 ppm, 3.7 h | P = 0.58012 d, 189 ppm, 1.8 h |
+| 1 Novelty | pass | pass | pass |
+| 2 Blind detection (SDE / empirical SNR) | 15.9 / 11.9 | 15.4 / 10.2 | 20.7 / 23.9 |
+| 3 Triage, 14 red flags | pass, no flags | pass, no flags | pass; soft flag `crowded_period` |
+| 4 Flipped baseline (max flag-free flipped SDE 11.7) | pass | pass | pass |
+| 5 Known EBs within 2.1′ | pass (none commensurate) | pass (none) | not checked |
+| 6 Fit: ρ_free vs ρ_TIC (g/cm³) | mild tension: 0.31 vs 0.60 | **fail**: 0.13 vs 1.71 (dip far too long) | **fail**: 0.70 vs 3.07 |
+| 7 Hold-out seasons | pass, 4/4 | **fail**, 2/3 (2021 season: nothing at predicted times) | pass, 4/4 |
+| 8 **Pixels**: missing-light offset | **fail**: 33.0″ N (38.7σ), onto Gaia DR3 1820410137384323584 (G = 17.0), which needs a ~28% eclipse | **fail**: 47.1″ SE (21.6σ), onto Gaia DR3 3323296950337617408 (G = 15.7), ~24% eclipse | **fail**: 13.9″ SW (3.4σ), consistent with Gaia DR3 5530349118981595136 (G = 16.6, 12″), ~6% eclipse |
+| 9 NASA (SPOC) vs MIT (QLP) | **fail**: SPOC 125 ± 12 ppm, consistent per sector; QLP inconsistent per sector | **fail**: 550 vs 372 ppm; sectors disagree | **fail**: SPOC 207 ± 11 ppm; QLP 347 ± 278, inconsistent |
+| 10 Host (Gaia RUWE, NSS flag, SIMBAD) | clean: 0.87, single | clean: 0.97, single | clean: 0.93, single |
+| **Verdict** | **likely neighbour EB** | **likely neighbour EB** | **likely neighbour EB** |
 
-## Evidence so far
-- **Passed all 14 automatic red-flag tests**, including:
-  - odd/even dip depths agree;
-  - no secondary eclipse;
-  - consistent across sectors;
-  - no single dip dominates;
-  - not a TESS-orbit alias;
-  - not stellar variability.
-- **Beat the false-alarm baseline.** We ran the identical search and triage on all 1,098 light curves flipped upside down, so they contain no real dips. No flag-free fake signal reached SDE 12; the maximum was 11.7. In the real data, these two reached 15.9 and 15.4.
-- **Not previously known.** Neither star is in:
-  - the live ExoFOP TOI or CTOI lists;
-  - the NASA Exoplanet Archive;
-  - SIMBAD as a binary.
+The host stars themselves look clean and single. In each case the periodic dimming is real, but it's centred on a faint neighbour inside the 21″ TESS pixels, not on the target. Niyati's signal is strictly periodic and passes all four hold-out seasons. That makes it a good candidate *eclipsing binary* on the neighbouring star, which could be reported as such.
 
-  No catalogued eclipsing binary or variable star within 2.1′ has a matching period. Sources checked: TESS EB catalogs, Gaia DR3 eclipsing and orbital binaries, AAVSO VSX.
-- **Niyati transit fit** (`results/phase3/plots/345494583_fit.png`):
-  - the transit model beats a flat line by Δχ² = 109;
-  - flat-bottomed, impact parameter b ≈ 0.2;
-  - Rp = 1.61 ± 0.17 R⊕.
-
-## Caveats
-- **Niyati's dip is slightly long.** Its free-fit stellar density is about half the catalogued value, a ~1.5σ tension. Possible causes: a blend, a larger star than catalogued, or an eccentric orbit.
-- **Avijit's dip is about 1.5× the longest expected** for its period and star. That is a known blended-binary signature.
-- **Crowded field.** Niyati lies in a crowded galactic-plane field. A faint G = 16.9 eclipsing binary (P = 3.783 d, not commensurate with the candidate's period) sits 31″ away.
-- **Missed by NASA and MIT.** Both stars are bright. Why NASA's and MIT's own full-frame-image searches did not flag these signals is not yet established.
+## Lessons
+1. **The pixel test (checklist step 8) is the decisive cheap test.** Run it before any public claim. We preregistered after steps 1–5 and had to retract.
+2. **Beating the false-alarm baseline proves a signal isn't noise. It doesn't prove where the signal comes from.**
+3. **Faint neighbours are the risk, not the reassurance.** A dilution-factor argument ("neighbours are 5–6 mag fainter") can't exclude a blend.
+4. **Bright stars with strong, unflagged signals should raise suspicion.** NASA's and MIT's pipelines likely had reasons to pass on these.
 
 ## How it was done
-The pipeline is adapted from [paraschopra/tess-planet-candidates](https://github.com/paraschopra/tess-planet-candidates), which found two candidates in the <60 pc shell. Changes in this repo:
+The pipeline is adapted from [paraschopra/tess-planet-candidates](https://github.com/paraschopra/tess-planet-candidates). Changes in this repo:
 
-- **Target shell:** 60–100 pc instead of <60 pc (`pipeline/01_targets.py`). The rest of the target cuts are unchanged: dwarfs with R < 1.5 R☉, contamination < 0.2, ≥3 sectors spanning ≥2 yr, FFI-only, expected SNR ≥ 10.
+- **Target shell:** 60–100 pc instead of < 60 pc (`pipeline/01_targets.py`). The rest of the cuts are unchanged: dwarfs with R < 1.5 R☉, contamination < 0.2, ≥ 3 sectors spanning ≥ 2 yr, FFI-only, expected SNR ≥ 10.
 - **Known-host exclusion:** fresh TOI/CTOI/NASA lists, retrieved 2026-10-09.
-- **Download robustness:** a network timeout (`pipeline/env.py`) and a hard per-star timeout (`pipeline/02_download.py`), so hung MAST connections can't stall the run.
-- **Vetting targets:** `pipeline/vet.py` points at the new candidates.
+- **Download robustness:** a network timeout (`pipeline/env.py`) and a hard per-star timeout (`pipeline/02_download.py`).
+- **Vetting targets:** `pipeline/vet.py` points at the three signals.
 - **Catalog cross-check:** `check_catalogs.py`, against live ExoFOP, the NASA Exoplanet Archive, and EB/variable catalogs.
-- **Preregistration package:** `make_package.py` generates the Zenodo package.
+- **Preregistration package:** `make_package.py`.
 
 ```bash
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
-.venv/bin/python pipeline/01_targets.py   # then 02_download, 03_search, 05_triage, 06_inverted, 07_fit ...
+.venv/bin/python pipeline/01_targets.py   # then 02_download, 03_search, 05_triage, 06_inverted, 07_fit, 08_holdout 1, 09_products, 10_pixels
 ```
 
 Light curves (~770 MB) are not in the repo; `02_download.py` re-fetches them from MAST.
@@ -65,17 +52,11 @@ Light curves (~770 MB) are not in the repo; `02_download.py` re-fetches them fro
 - `results/targets_searched.csv`: the 1,098 searched stars.
 - `results/phase2/signals.csv`, `results/phase2/triage.csv`: every search signal, with red flags.
 - `results/phase3/inverted_triage.csv`: the upside-down false-alarm baseline.
-- `results/phase3/*_fit.json`, `results/phase3/plots/`: transit fits.
-- `package/TIC*/`: the exact files deposited on Zenodo.
-
-## Next steps
-1. Finish vetting: Avijit's fit, hold-out seasons, NASA-vs-MIT reductions, and pixel-level difference imaging. Post the results as new Zenodo versions.
-2. A short Research Note of the AAS. ExoFOP has required publication before CTOI upload since 2026-08-19.
-3. Then submit CTOIs **TIC 345494583.01** and **TIC 156733696.01**.
+- `results/phase3/*_{fit,holdout,pixels,products}.json`, `results/phase3/plots/`: vetting outputs for the three signals.
+- `package/TIC*/`: the files originally deposited on Zenodo, now superseded.
 
 ## Credits and license
 - **Pipeline:** Paras Chopra (MIT).
-- **This search and these candidates:** Avijit Thawani.
-- **AI assistance:** analysis was run with AI coding agents.
+- **This search and vetting:** Avijit Thawani, with AI coding agents.
 - **Data:** all public. NASA TESS via MAST, ESA Gaia, the TESS Input Catalog, ExoFOP, and the NASA Exoplanet Archive.
 - **License:** code is MIT (see `LICENSE`); text, figures and data products are CC BY 4.0.

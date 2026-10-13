@@ -1,0 +1,138 @@
+[
+ {
+  "tic": 345494583,
+  "held_out": [
+   14
+  ],
+  "held_out_dates": "2019-07-18 to 2019-08-14",
+  "train_best_period": 2.901457399621747,
+  "train_best_sde": 14.128699002574754,
+  "train_best_snr": 12.335273753541696,
+  "train_signal_number": 1,
+  "recovers_period": true,
+  "train_sde_at_candidate_period": 14.128699002574754,
+  "prediction_drift_vs_full_hr": -0.03081695702530851,
+  "as_designed": {
+   "pred_t0": 2422.7173076108866,
+   "pred_dur_hr": 3.4908547784307915,
+   "depth_ppm": 82.75344003222258,
+   "err_emp_ppm": 26.446003811484108,
+   "snr": 3.1291472474297657,
+   "n_transits": 7,
+   "frac_orbit_as_deep": 0.0,
+   "scan_peak_offset_hr": 0.8727136946076979
+  },
+  "refined_width": {
+   "pred_t0": 2422.7120992856812,
+   "pred_dur_hr": 3.6399999999999997,
+   "depth_ppm": 83.83018994306819,
+   "err_emp_ppm": 27.556313231250357,
+   "snr": 3.0421409874235352,
+   "n_transits": 7,
+   "frac_orbit_as_deep": 0.0,
+   "scan_peak_offset_hr": 0.0
+  }
+ },
+ {
+  "tic": 345494583,
+  "held_out": [
+   41
+  ],
+  "held_out_dates": "2021-07-24 to 2021-08-20",
+  "train_best_period": 2.9014514672610705,
+  "train_best_sde": 11.388641128994452,
+  "train_best_snr": 10.997482302141998,
+  "train_signal_number": 1,
+  "recovers_period": true,
+  "train_sde_at_candidate_period": 11.388641128994452,
+  "prediction_drift_vs_full_hr": 0.0,
+  "as_designed": {
+   "pred_t0": 1685.7484358762817,
+   "pred_dur_hr": 3.4908547784307915,
+   "depth_ppm": 90.6094863784031,
+   "err_emp_ppm": 11.989606685004068,
+   "snr": 7.557336012676078,
+   "n_transits": 9,
+   "frac_orbit_as_deep": 0.0,
+   "scan_peak_offset_hr": 0.0
+  },
+  "refined_width": {
+   "pred_t0": 1685.744597271941,
+   "pred_dur_hr": 3.6399999999999997,
+   "depth_ppm": 87.95817442454164,
+   "err_emp_ppm": 9.556552670030618,
+   "snr": 9.203964804210075,
+   "n_transits": 9,
+   "frac_orbit_as_deep": 0.0,
+   "scan_peak_offset_hr": 0.0
+  }
+ },
+ {
+  "tic": 345494583,
+  "held_out": [
+   54
+  ],
+  "held_out_dates": "2022-07-09 to 2022-08-04",
+  "train_best_period": 2.9014514672610705,
+  "train_best_sde": 13.716788454637744,
+  "train_best_snr": 11.387074019489758,
+  "train_signal_number": 1,
+  "recovers_period": true,
+  "train_sde_at_candidate_period": 13.716788454637744,
+  "prediction_drift_vs_full_hr": 1.0913936421275139e-11,
+  "as_designed": {
+   "pred_t0": 1685.7484358762817,
+   "pred_dur_hr": 3.4908547784307915,
+   "depth_ppm": 125.57856257251488,
+   "err_emp_ppm": 22.54613241624592,
+   "snr": 5.569849420472114,
+   "n_transits": 8,
+   "frac_orbit_as_deep": 0.0,
+   "scan_peak_offset_hr": 0.0
+  },
+  "refined_width": {
+   "pred_t0": 1685.727097271941,
+   "pred_dur_hr": 2.2399999999999998,
+   "depth_ppm": 140.79137806816126,
+   "err_emp_ppm": 28.494309579319435,
+   "snr": 4.941034899485499,
+   "n_transits": 8,
+   "frac_orbit_as_deep": 0.0,
+   "scan_peak_offset_hr": 0.0
+  }
+ },
+ {
+  "tic": 345494583,
+  "held_out": [
+   81
+  ],
+  "held_out_dates": "2024-07-15 to 2024-08-10",
+  "train_best_period": 2.9014103396755826,
+  "train_best_sde": 13.040482616864399,
+  "train_best_snr": 11.44283125305207,
+  "train_signal_number": 1,
+  "recovers_period": true,
+  "train_sde_at_candidate_period": 13.040482616864399,
+  "prediction_drift_vs_full_hr": -0.42341481073890463,
+  "as_designed": {
+   "pred_t0": 1685.7568273541144,
+   "pred_dur_hr": 3.4908547784307915,
+   "depth_ppm": 97.33263353219242,
+   "err_emp_ppm": 17.225801435899832,
+   "snr": 5.650397973898856,
+   "n_transits": 7,
+   "frac_orbit_as_deep": 0.0,
+   "scan_peak_offset_hr": 0.0
+  },
+  "refined_width": {
+   "pred_t0": 1685.7562639386076,
+   "pred_dur_hr": 3.6399999999999997,
+   "depth_ppm": 93.09445165424978,
+   "err_emp_ppm": 17.22445626324671,
+   "snr": 5.404783189173486,
+   "n_transits": 7,
+   "frac_orbit_as_deep": 0.0,
+   "scan_peak_offset_hr": 0.0
+  }
+ }
+]
